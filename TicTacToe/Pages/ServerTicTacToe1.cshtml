@@ -1,0 +1,33 @@
+﻿@page
+@model TicTacToe.Pages.ServerTicTacToe1Model
+@{
+    ViewData["Title"] = "ServerTicTacToe";
+}
+
+<h2>ServerTicTacToe</h2>
+<p>@Model.Turn's Turn</p>
+
+<form>
+    <div class="board">
+        @for (int y = 0; y < 3; y++)
+        {
+            <div class="row">
+                @for (int x = 0; x < 3; x++)
+                {
+                    @if(Model.Board[x, y] == null)
+                    {
+                        <input type="radio" name="move" value="cell-@x-@y" class="cell"/>
+                    }
+                    else
+                    {
+                        <div class="cell">@Model.Board[x,y]</div>
+                    }
+                }
+            </div>
+        }
+    </div>
+    <input type="hidden" name="turn" value="@Model.Turn"/>
+    <input type="hidden" name="state" value="@Model.State"/>
+    <input type="submit" value="Make a Move"/>
+</form>
+
