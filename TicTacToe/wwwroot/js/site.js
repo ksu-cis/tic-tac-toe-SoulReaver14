@@ -61,7 +61,7 @@ function declareWinner()
 }
 
 // Checkers Stuff
-var squares = document.gquerySelectorAll("#checkers-board > .square");
+var squares = document.querySelectorAll("#checkers-board > .square");
 for (var i = 0; i < squares.length; i++) {
     squares[i].addEventListener('dragenter', onDragEnter);
     squares[i].addEventListener('dragleave', onDragLeave);
@@ -83,8 +83,8 @@ function onDragLeave(event) {
 }
 
 function onDragStart(event) {
-    document.getElementbyID("fromX").value = event.target.dataset.x;
-    document.getElementbyID("fromY").value = event.target.dataset.y;
+    document.getElementById("fromX").value = event.target.dataset.x;
+    document.getElementById("fromY").value = event.target.dataset.y;
 }
 
 function onDragEnd(event) {
